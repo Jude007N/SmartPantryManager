@@ -63,6 +63,8 @@ public final class RecipeSeed {
                 i("chicken breast", 300, "g"), i("rice", 200, "g"), i("onion", 1, "pcs"), i("garlic", 2, "pcs"), i("oil", 1, "tbsp")));
         l.add(r("Potato Wedges", "Cut the potatoes into wedges.\nToss with oil and salt.\nBake at 220C for 30 minutes.",
                 i("potato", 4, "pcs"), i("oil", 2, "tbsp"), i("salt", 1, "tsp")));
+        l.add(r("Bean Stew", "Fry the onion in oil.\nAdd beans and tomatoes.\nSimmer for 15 minutes.",
+                i("baked beans", 400, "g"), i("onion", 1, "pcs"), i("tomato", 2, "pcs"), i("oil", 1, "tbsp")));
         return l;
     }
 }
