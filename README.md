@@ -1,6 +1,6 @@
 # Smart Pantry Manager
 
-A Java Android app (Mobile App Development 700) that helps reduce food waste. You record the ingredients you actually have at home and the app suggests recipes you can cook using strictly those ingredients, with no shopping trip needed.
+Smart Pantry Manager is an Android app I built in Java for Mobile App Development 700. Food often gets thrown away simply because people forget what they have at home, so the app lets you keep a list of the ingredients in your pantry and then shows only the recipes you can cook right now with exactly what you already own. If a recipe needs even one ingredient you don't have, it isn't suggested.
 
 ## Features
 - Pantry management: add, edit and delete ingredients (name, quantity, unit, optional expiry date), with input validation
@@ -12,14 +12,10 @@ A Java Android app (Mobile App Development 700) that helps reduce food waste. Yo
 - Friendly message when no recipes match
 
 ## Database choice: SQLite (SQLiteOpenHelper)
-SQLite runs on the device, needs no account, server or internet, and persists data between launches. That suits a personal pantry app, and it keeps the project simple to set up and run. Tables: `pantry`, `recipes`, `recipe_ingredients`.
+I chose SQLite for the database. The app only stores one person's pantry, so it doesn't need an online server or a user account, and SQLite stores everything on the phone itself. That means the app works without internet, my data is still there after I close and reopen it, and it covers all the create, read, update and delete operations the assignment requires. I used SQLiteOpenHelper because it is the approach we covered in the persistent data chapter of the module.
 
 ## Setup and run
-1. Install Android Studio (Koala or newer) with an Android SDK (API 34).
-2. Open Android Studio, choose File > Open and select this folder. Let Gradle sync finish.
-3. Create or choose an emulator (API 24 or higher), or connect a physical device with USB debugging on.
-4. Press Run. The app opens on the Pantry screen.
-5. To run the unit tests for the matching logic: right-click `app/src/test` and choose Run Tests.
+I built and tested this app in Android Studio Rabbit 1 using the Medium Phone emulator on API 37. To run it, open the project folder in Android Studio, wait for the Gradle sync to finish, choose an emulator or a connected phone, and press Run. The recipes are added to the database automatically the first time the app starts.
 
 ## Project structure
 - `model` : PantryItem, Recipe, RecipeIngredient
