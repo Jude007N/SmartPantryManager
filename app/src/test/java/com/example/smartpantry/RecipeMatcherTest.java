@@ -100,4 +100,10 @@ public class RecipeMatcherTest {
         }
         assertEquals(seed.size(), RecipeMatcher.suggest(full, seed).size());
     }
+
+    @Test public void uppercaseUnits_stillMatch() {
+        Recipe r = recipe(new RecipeIngredient("flour", 200, "g"));
+        List<PantryItem> pantry = Arrays.asList(p("flour", 1, "KG"));
+        assertEquals(1, RecipeMatcher.suggest(pantry, one(r)).size());
+    }
 }
