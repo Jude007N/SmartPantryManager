@@ -26,7 +26,7 @@ public final class IngredientMatcher {
         return head + singular(s.substring(cut + 1));
     }
 
-    /** Very small rule based singulariser (no NLP needed for this assignment). */
+    /** Very small rule based */
     static String singular(String w) {
         if (w.length() <= 3 || NO_SINGULAR.contains(w)) return w;
         if (w.endsWith("ies")) return w.substring(0, w.length() - 3) + "y";          // berries -> berry
