@@ -28,10 +28,10 @@ public final class RecipeMatcher {
         return stock;
     }
 
-    /** How many distinct required ingredients are missing or short. A recipe with no ingredients counts as invalid. */
+    // Counts how many ingredients the recipe needs that the pantry doesn't have enough of
     public static int missingCount(Recipe recipe, Map<String, Double> stock) {
         if (recipe.getIngredients().isEmpty()) return Integer.MAX_VALUE;
-        // Merge repeated ingredient lines before comparing
+        // Add up repeated ingredient lines, converted to base units
         Map<String, Double> need = new HashMap<>();
         for (RecipeIngredient ri : recipe.getIngredients()) {
             String k = IngredientMatcher.key(ri.getName(), ri.getUnit());
@@ -39,6 +39,7 @@ public final class RecipeMatcher {
             Double old = need.get(k);
             need.put(k, (old == null ? 0 : old) + q);
         }
+        // Compare what the recipe needs with what the pantry holds
         int missing = 0;
         for (Map.Entry<String, Double> e : need.entrySet()) {
             Double have = stock.get(e.getKey());
