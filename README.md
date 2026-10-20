@@ -23,3 +23,6 @@ I built and tested this app in Android Studio Rabbit 1 using the Medium Phone em
 - `data` : RecipeSeed (the 20 pre-loaded recipes)
 - `db` : DatabaseHelper (SQLite CRUD)
 - `ui` : the five Activities and the two RecyclerView adapters
+
+## Testing
+The matching logic is covered by JUnit tests in app/src/test (RecipeMatcherTest). They check the strict matching rule, singular and plural names, unit conversion, upper case units, insufficient quantities and summing duplicate pantry rows. To run them, right-click the test folder in Android Studio and choose Run Tests.
