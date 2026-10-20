@@ -6,7 +6,7 @@ import com.example.smartpantry.model.RecipeIngredient;
 import java.util.ArrayList;
 import java.util.List;
 
-/** The 20 recipes pre-loaded into the database on first run. */
+/** The 21 recipes pre-loaded into the database on first run. */
 public final class RecipeSeed {
 
     private RecipeSeed() {}
